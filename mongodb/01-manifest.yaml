@@ -9,10 +9,10 @@ metadata:
       component: mongodb
       tier: backend
 spec:
-  replicas: 3
+  replicas: 1
   # replicas: 10
   selector:
-    # these labels are used to select pods
+    #  these labels are used to select pods
     matchLabels:
       project: roboshop
       component: mongodb
