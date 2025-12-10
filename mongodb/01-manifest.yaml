@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  Namespace: roboshop
+  # these are replica set labels
+  labels:
+      project: roboshop
+      component: mongodb
+      tier: backend
+spec:
+  replicas: 3
+  # replicas: 10
+  selector:
+    # these labels are used to select pods
+    matchLabels:
+      project: roboshop
+      component: mongodb
+      tier: backend
+  # pod definition
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        component: mongodb
+        tier: backend
+    spec:
+      containers:
+      - name: mongodb
+        image: vijayamudalapalli/mongodb:v1
+        # image: nginx
+        # image: nginx:trixie-perl
+        # image: nginx:latest
