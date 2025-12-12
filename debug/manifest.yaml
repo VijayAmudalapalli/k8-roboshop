@@ -8,6 +8,6 @@ metadata:
     project: roboshop
 spec:
   containers:
-    - name: nginx
+    - name: debug
       image: vijayamudalapalli/debug:v1
-
+      imagePullPolicy: Always
